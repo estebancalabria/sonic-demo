@@ -1,0 +1,14 @@
+resources:
+  repositories:
+  - repository: self
+    type: git
+    ref: main
+jobs:
+  - job : "Bajar_Fuentes_y_Compilar"
+    displayName: "Bajar Fuentes y Compilar"
+    pool: vs2017-win2016
+    steps:
+      - checkout: self
+        clean: true
+      - task: DotNetCoreCLI@2
+        displayName: "Construir Solucion"
