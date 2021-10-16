@@ -6,7 +6,8 @@ resources:
 jobs:
   - job : "Bajar_Fuentes_y_Compilar"
     displayName: "Bajar Fuentes y Compilar"
-    pool: vs2017-win2016
+    pool: 
+      vmImage: vs2017-win2016
     steps:
       - checkout: self
         clean: true
